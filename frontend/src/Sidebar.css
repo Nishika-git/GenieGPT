@@ -1,0 +1,223 @@
+.sidebar {
+    background-color: #212121;
+    color: #b4b4b4;
+    position: relative;
+    /* overflow-y: scroll; */
+    z-index: 1;
+    height: 100vh;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    top: 10px;;
+    left:10px;
+    z-index: 1000;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+button {
+    display: flex;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: transparent;
+    border-bottom: solid 0.5px #171717;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(180, 180, 180, 0.05);
+}
+
+.buttons {
+    font-size: 14px;
+    padding-top: 25px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sora {
+    font-size: 14px;
+    padding-top: 25px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gpt {
+    font-size: 14px;
+    padding-top: 25px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.history {
+    margin: 10px;
+    padding: 10px;
+    padding-left: 0px;
+    height: 100%;
+}
+
+.history span {
+    color: rgb(178, 174, 174);
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 14px;
+    border: solid 10px transparent;
+    position: relative;
+}
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 14px;
+    border: solid 10px transparent;
+    position: relative;
+}
+
+.history li:hover {
+    background-color: #3f3f3f;
+    border-radius: 10px;
+}
+
+.sign {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 18%;
+    /* left:70px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border-top: solid 0.25px rgba(61, 61, 61, 0.5)
+}
+
+.fa-trash-can {
+    opacity: 0;
+    position: absolute;
+
+}
+
+.history li:hover .fa-trash-can {
+    opacity: 1;
+    color: #fff;
+}
+
+.fa-trash-can:hover {
+    color: #f87171 !important;
+}
+
+.history .fa-ellipsis {
+    opacity: 0;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.history li:hover .fa-ellipsis {
+    opacity: 1;
+    /* background-color: #dfdede; */
+}
+
+.dropDown {
+    opacity: 1;
+    position: absolute;
+    right: -130px;
+    background-color: #2e2e2e;
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.dropDownItem {
+    opacity: 1;
+    font-size: 0.9rem;
+    margin: 0.2rem 0.5rem;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.dropDownItem:hover {
+    background-color: rgba(180, 180, 180, 0.1);
+    border-radius: 6px;
+}
+
+.highlighted{
+    background-color: rgba(100, 100, 100, 0.05);
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+.sidebar.dark {
+  background-color: #111010;
+  color: #f8f8f8;
+}
+
+/* Light Mode */
+/* ☀️ Light mode styles */
+.app.light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.app.light .sidebar {
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+.app.light .sidebar li,
+.app.light .sidebar span,
+.app.light .sidebar a,
+.app.light .sidebar i
+ {
+  color: #222;   /* dark text for visibility */
+}
+
+.app.light .history li:hover {
+    background-color: #ebe9e9;
+    border-radius: 10px;
+}
+.app.light .sidebar .dropDown{
+    background-color: rgb(255, 254, 254);
+}
+.app.light .sidebar .dropDown i{
+    color: rgb(12, 12, 12);
+}
+
+.app.light button{
+    border: none;
+}

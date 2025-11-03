@@ -1,0 +1,270 @@
+.chatWindow {
+  background-color: #171717;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  height: 52px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar span {
+  margin: 1rem 2rem;
+}
+
+.userIconDiv {
+  margin: 1rem 2rem;
+}
+
+.userIcon {
+  background-color: #339cff;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* chat input */
+
+.chatInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputBox {
+  width: 130%;
+  position: relative;
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  font-size: 1rem;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 28px;
+  border:1px solid rgb(212, 211, 211);
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+    rgba(0, 0, 0, 0.05)0 -12px 30px,
+    rgba(0, 0, 0, 0.05)0 4px 6px,
+    rgba(0, 0, 0, 0.05)0 13px 3px,
+    rgba(0, 0, 0, 0.05)0 -3px 5px; */
+}
+
+input:focus {
+  outline: none;
+}
+
+#submit {
+  cursor: pointer;
+  height: 60px;
+  width: 35px;
+  font-size: 30px;
+  position: absolute;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  color: #737272;
+}
+
+.info span {
+  color: #c7c6c6;
+  text-decoration: underline;
+}
+
+.dropDown1 {
+  opacity: 1;
+  top: 40px;
+  /* z-index: 9999 !important; */
+  position: absolute;
+  right: 80px;
+  background-color: #323232;
+  padding: 0.1rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+.dropDownItem1 {
+  font-size: 0.9rem;
+  margin: 0.2rem 0.5rem;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  z-index: 2 !important;
+  flex-direction: row;
+
+}
+
+.dropDownItem1:hover {
+  background-color: rgba(180, 180, 180, 0.1);
+  border-radius: 6px;
+}
+
+/* 🌙 Dark mode */
+.chatWindow.dark {
+  background-color: #171717;
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .navbar {
+  background-color: #171717;
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .navbar span {
+  color: #f0ecec;
+}
+.chatWindow.dark .info span {
+  color: #c5c5c5;
+  text-decoration: underline;
+}
+.chatWindow.dark .dropDown1 {
+  background-color: #222;
+  color: #f1f1f1;
+}
+.chatWindow.dark .dropDown1 button{
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .dropDownItem1 {
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .dropDownItem1:hover {
+  background-color: #333;
+}
+
+/* Chat area */
+.chatWindow.dark .chats {
+  background-color: #171717;
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .userMessage {
+  background-color: #333;
+  color: #fff;
+}
+
+.chatWindow.dark .gptDiv {
+  /* background-color: #222; */
+  color: #f1f1f1;
+}
+
+/* Input area */
+.chatWindow.dark .chatInput {
+  /* background-color: #1e1e1e; */
+  color: #f1f1f1;
+}
+
+.chatWindow.dark .chatInput input {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+
+/* ☀️ Light mode */
+.chatWindow.light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.chatWindow.light .navbar {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.chatWindow.light .dropDown1 button i{
+  color: #0e0d0d;
+}
+
+.chatWindow.light .navbar span {
+  color: #222;
+}
+
+.chatWindow.light .navbar i{
+   color: #b3b2b2;
+}
+
+.chatWindow.light .dropDown1 {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+.chatWindow.light .dropDownItem1 {
+  color: #222;
+}
+
+.chatWindow.light .dropDownItem1 i{
+  color: #2f2f2f;
+}
+
+.chatWindow.light .dropDownItem1:hover {
+  background-color: #f2f2f2;
+}
+
+/* Chat area */
+.chatWindow.light .chats {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.chatWindow.light .userMessage {
+  background-color: #efefef;
+  color: #222;
+}
+
+.chatWindow.light .gptDiv {
+  
+  color: #050505;
+}
+
+/* Input area */
+.chatWindow.light .chatInput {
+  color: #222;
+}
+
+.chatWindow.light .chatInput input {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+.chatWindow.light .info span{
+  color: black;
+}
+
+.chatWindow.light #submit i{
+  color: black;
+}

@@ -1,0 +1,115 @@
+.chats{
+    max-width: 700px;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.userDiv{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    
+}
+
+.gptDiv{
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 0.8rem 0.5rem;
+  /* border-radius: 12px 12px 12px 0; */
+}
+
+.userMessage{
+    padding: 10px 20px;
+    border-radius: 14px;
+    margin-left: 10rem;
+    max-width: 500px;
+    width: fit-content;
+}
+
+.hljs{
+  border-radius: 14px;
+}
+
+/* pre{
+  white-space: pre-wrap;
+} */
+
+
+.chats::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+
+/* 🌙 Dark mode */
+.chats.dark {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+.chats.dark::-webkit-scrollbar-track {
+  
+  background: #1e1e1e;
+  right: 10px;
+}
+
+/* ☀️ Light mode */
+.chats.light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.chats.light::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* 👤 User message bubble */
+.userDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userMessage {
+  padding: 0.8rem 1rem;
+  border-radius: 26px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* User bubble colors */
+/* .chats.dark .userMessage {
+  background-color: #222; 
+  color: #fff;
+} */
+
+/* .chats.light .userMessage {
+  background-color: #dbeafe; /* pale blue */
+  /* color: #222;
+} */ */
+
+
+/* 🖥️ Code blocks */
+.hljs {
+  border-radius: 12px;
+}
+
+
+/* Welcome heading */
+.welcomeText {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Dark mode heading */
+.welcomeText.dark {
+  color: #eaeaea;
+  opacity: 0.9;
+}
+
+/* Light mode heading */
+.welcomeText.light {
+  color: #222;
+  opacity: 0.85;
+}
