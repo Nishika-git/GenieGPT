@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "render-build": "npm install vite && npm run build"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.8.0",
