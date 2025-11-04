@@ -8,11 +8,12 @@ function sidebar() {
     const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
     const [isOpen, setIsOpen] = useState(null);
     const { mode } = useContext(MyContext);
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     const getAllThreads = async () => {
 
         try {
-            const response = await fetch("http://localhost:8080/api/thread");
+            const response = await ffetch(`${API_BASE_URL}/api/thread`);
             const res = await response.json();
             const filteredData = res.map(thread => ({ threadId: thread.threadId, title: thread.title }));
             // console.log(filteredData);
