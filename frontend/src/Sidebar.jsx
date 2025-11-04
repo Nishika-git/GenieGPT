@@ -75,7 +75,7 @@ function sidebar() {
     return (
         <section className={`sidebar ${mode}`}>
             <button onClick={createNewChat}>
-                <img src="src/assets/blacklogo.png" alt="gpt logo" className="logo"></img>
+                <img src="https://play-lh.googleusercontent.com/lmG9HlI0awHie0cyBieWXeNjpyXvHPwDBb8MNOVIyp0P8VEh95AiBHtUZSDVR3HLe3A=w240-h480-rw" alt="gpt logo" className="logo"></img>
             </button>
 
             <div className="buttons">
