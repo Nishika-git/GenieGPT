@@ -14,7 +14,7 @@ const app = express();
 app.use(
   cors({
     origin: ["https://geniegpt-2.onrender.com"], // your frontend on Render
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "DELETE"],
     credentials: true,
   })
 );
