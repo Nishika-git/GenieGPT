@@ -88,17 +88,15 @@ router.post("/chat", async (req, res) => {
 
         thread.messages.push({ role: "user", content: message });
 
-        let assistantReply;
-        try {
-            assistantReply = await getOpenAiAPIResponse(message);
-        } catch (apiError) {
-            console.error("OpenAI Error:", apiError);
-            return res.status(500).json({ error: "AI response failed" });
-        }
+        const assistantReply = await getOpenAiAPIResponse(message);
 
+        // 🔴 FIX HERE
         if (!assistantReply) {
+            console.error("Empty AI response");
             return res.status(500).json({ error: "AI returned empty response" });
         }
+
+
 
         thread.messages.push({ role: "assistant", content: assistantReply });
 
