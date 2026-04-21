@@ -96,6 +96,10 @@ router.post("/chat", async (req, res) => {
             return res.status(500).json({ error: "AI response failed" });
         }
 
+        if (!assistantReply) {
+            return res.status(500).json({ error: "AI returned empty response" });
+        }
+
         thread.messages.push({ role: "assistant", content: assistantReply });
 
         thread.updatedAt = new Date();
