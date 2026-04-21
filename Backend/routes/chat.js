@@ -9,7 +9,7 @@ dotenv.config();
 
 const router = express.Router();
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 router.post("/test", async (req, res) => {
@@ -72,32 +72,40 @@ router.post("/chat", async (req, res) => {
     const { threadId, message } = req.body;
 
     if (!threadId || !message) {
-        return res.status(404).json({ error: "missing required fields" });
+        return res.status(400).json({ error: "missing required fields" });
     }
 
     try {
         let thread = await Thread.findOne({ threadId });
+
         if (!thread) {
-            //create a new thread in DB
             thread = new Thread({
                 threadId,
                 title: message,
-                messages: [{ role: "user", content: message }]
+                messages: []
             });
-        } else {
-            thread.messages.push({ role: "user", content: message });
         }
 
-        const assistantReply = await getOpenAiAPIResponse(message);
+        thread.messages.push({ role: "user", content: message });
+
+        let assistantReply;
+        try {
+            assistantReply = await getOpenAiAPIResponse(message);
+        } catch (apiError) {
+            console.error("OpenAI Error:", apiError);
+            return res.status(500).json({ error: "AI response failed" });
+        }
+
         thread.messages.push({ role: "assistant", content: assistantReply });
+
         thread.updatedAt = new Date();
         await thread.save();
+
         res.json({ reply: assistantReply });
 
     } catch (err) {
-        console.log(err);
+        console.error("Server Error:", err);
         res.status(500).json({ error: "something went wrong" });
     }
 });
-
 export default router;
