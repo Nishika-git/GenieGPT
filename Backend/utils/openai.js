@@ -23,17 +23,12 @@ const getOpenAiAPIResponse = async (message) => {
 
         const data = await response.json();
 
-        // 🔴 Log full response for debugging
-        console.log("OpenAI RAW response:", data);
+        
+        console.log("STATUS:", response.status);
+        console.log("FULL OPENAI RESPONSE:", JSON.stringify(data, null, 2));
 
-        // ❌ Handle API error
         if (!response.ok) {
             throw new Error(data.error?.message || "OpenAI API error");
-        }
-
-        // ❌ Validate structure
-        if (!data.choices || !data.choices[0]?.message?.content) {
-            throw new Error("Invalid OpenAI response structure");
         }
 
         return data.choices[0].message.content;

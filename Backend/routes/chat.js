@@ -106,7 +106,7 @@ router.post("/chat", async (req, res) => {
         res.json({ reply: assistantReply });
 
     } catch (err) {
-        console.error("Server Error:", err);
+        console.error("Server Error:", err.message);
         res.status(500).json({ error: "something went wrong" });
     }
 });
